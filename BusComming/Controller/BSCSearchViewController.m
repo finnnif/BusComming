@@ -8,6 +8,7 @@
 
 #import "BSCSearchViewController.h"
 #import "BusRouteModel.h"
+#import "BSCRouteViewController.h"
 
 @interface BSCSearchViewController ()<UISearchResultsUpdating, UITableViewDelegate,UITableViewDataSource>
 
@@ -28,7 +29,6 @@ static NSString *cellId = @"busCellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismiss)];
     
@@ -105,8 +105,21 @@ static NSString *cellId = @"busCellID";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     BusRouteModel *model = [self.busRouteArr objectAtIndex:indexPath.row];
     cell.textLabel.text = model.RouteName;
-//    cell.imageView.image = [UIImage imageNamed:@""];
     return cell;
+}
+
+- (void)returnModel:(returnRouteBlock)modelBlock
+{
+    self.returnRouteBlock = modelBlock;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BusRouteModel *model = [self.busRouteArr objectAtIndex:indexPath.row];
+    
+    self.returnRouteBlock(model);
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
 }
 
 #pragma mark - searchController delegate

@@ -186,7 +186,7 @@ static NSString *cellId = @"busCell";
     BusTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     
     cell.busModel = [self.busLists objectAtIndex:indexPath.row];
-    cell.stationModel = [self.busStationLists objectAtIndex:cell.busModel.RStanum];
+//    cell.stationModel = [self.busStationLists objectAtIndex:cell.busModel.RStanum];
     
     if (self.segmentControl.selectedSegmentIndex == 0) {
         cell.busType = EBusType785Go;

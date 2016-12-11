@@ -84,21 +84,24 @@
 
 - (void)refresh
 {
-    if (self.busModel && self.stationModel) {
+    if (self.busModel && self.busStationIndex && self.stationList) {
         
+        BusStationModel *stationModel = [self.stationList objectAtIndex:self.busModel.RStanum];
         if (self.busModel.StopBusStaNum == 0) {
-            self.label1.text = [NSString stringWithFormat:@"已离开: %@", self.stationModel.StationName];
+            self.label1.text = [NSString stringWithFormat:@"已离开: %@", stationModel.StationName];
         } else if (self.busModel.StopBusStaNum == 1) {
-            self.label1.text = [NSString stringWithFormat:@"已进站: %@", self.stationModel.StationName];
+            self.label1.text = [NSString stringWithFormat:@"已进站: %@", stationModel.StationName];
         }
         
-        if (self.busType == EBusType785Go) {
-            [self stationTipsWithNumber:12];
-        } else if (self.busType == EBusType311Go) {
-            [self stationTipsWithNumber:8];
-        } else if (self.busType == EBusType311Back) {
-            [self stationTipsWithNumber:14];
-        }
+        [self stationTipsWithNumber:self.busStationIndex];
+        
+//        if (self.busType == EBusType785Go) {
+//            [self stationTipsWithNumber:12];
+//        } else if (self.busType == EBusType311Go) {
+//            [self stationTipsWithNumber:8];
+//        } else if (self.busType == EBusType311Back) {
+//            [self stationTipsWithNumber:14];
+//        }
         
         self.label3.text = [NSString stringWithFormat:@"ExpNum: %d", self.busModel.ExpArriveBusStaNum];
     }

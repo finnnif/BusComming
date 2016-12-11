@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class BusRouteModel;
+
 @interface BSCRouteViewController : UIViewController
+
+/** <#des#> */
+@property (nonatomic, strong) BusRouteModel *routeModel;
 
 @end

@@ -21,8 +21,11 @@ typedef NS_ENUM(NSUInteger, EBusType) {
 /** <#des#> */
 @property (nonatomic, strong) BusModel *busModel;
 /** <#des#> */
-@property (nonatomic, strong) BusStationModel *stationModel;
-
+//@property (nonatomic, strong) BusStationModel *stationModel;
+/** <#des#> */
+@property (nonatomic, strong) NSArray *stationList;
+/** <#des#> */
+@property (nonatomic, assign) int32_t busStationIndex;
 /** <#des#> */
 @property (nonatomic, assign) EBusType busType;
 

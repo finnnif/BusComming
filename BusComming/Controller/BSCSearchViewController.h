@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class BusRouteModel;
+
+typedef void(^returnRouteBlock)(BusRouteModel *model);
+
 @interface BSCSearchViewController : UIViewController
+
+@property (nonatomic, copy) returnRouteBlock returnRouteBlock;
+
+- (void)returnModel:(returnRouteBlock)modelBlock;
 
 @end

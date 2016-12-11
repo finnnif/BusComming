@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		381743591DF5952D00649D6D /* BSCSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381743581DF5952D00649D6D /* BSCSearchViewController.m */; };
 		3817435F1DF5ACBD00649D6D /* BSCRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3817435E1DF5ACBD00649D6D /* BSCRouteViewController.m */; };
+		3847A2361DFA9E8F00BDC0E5 /* BSCSelectedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3847A2351DFA9E8F00BDC0E5 /* BSCSelectedButton.m */; };
+		3847A2391DFAC45B00BDC0E5 /* BSCStationListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3847A2381DFAC45B00BDC0E5 /* BSCStationListTableViewController.m */; };
 		3850C7241DC8378E00B4CFE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3850C7231DC8378E00B4CFE8 /* main.m */; };
 		3850C7271DC8378E00B4CFE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3850C7261DC8378E00B4CFE8 /* AppDelegate.m */; };
 		3850C72F1DC8378E00B4CFE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3850C72E1DC8378E00B4CFE8 /* Assets.xcassets */; };
@@ -29,6 +31,10 @@
 		3817435D1DF5ACBD00649D6D /* BSCRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSCRouteViewController.h; sourceTree = "<group>"; };
 		3817435E1DF5ACBD00649D6D /* BSCRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSCRouteViewController.m; sourceTree = "<group>"; };
 		381743601DF5C5D600649D6D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		3847A2341DFA9E8F00BDC0E5 /* BSCSelectedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSCSelectedButton.h; sourceTree = "<group>"; };
+		3847A2351DFA9E8F00BDC0E5 /* BSCSelectedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSCSelectedButton.m; sourceTree = "<group>"; };
+		3847A2371DFAC45B00BDC0E5 /* BSCStationListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSCStationListTableViewController.h; sourceTree = "<group>"; };
+		3847A2381DFAC45B00BDC0E5 /* BSCStationListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSCStationListTableViewController.m; sourceTree = "<group>"; };
 		3850C71F1DC8378E00B4CFE8 /* BusComming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusComming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3850C7231DC8378E00B4CFE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3850C7251DC8378E00B4CFE8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -139,6 +145,8 @@
 				3817435E1DF5ACBD00649D6D /* BSCRouteViewController.m */,
 				381743571DF5952D00649D6D /* BSCSearchViewController.h */,
 				381743581DF5952D00649D6D /* BSCSearchViewController.m */,
+				3847A2371DFAC45B00BDC0E5 /* BSCStationListTableViewController.h */,
+				3847A2381DFAC45B00BDC0E5 /* BSCStationListTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,6 +173,8 @@
 			children = (
 				38F7156D1DD0A27D00279DB6 /* BusTableViewCell.h */,
 				38F7156E1DD0A27D00279DB6 /* BusTableViewCell.m */,
+				3847A2341DFA9E8F00BDC0E5 /* BSCSelectedButton.h */,
+				3847A2351DFA9E8F00BDC0E5 /* BSCSelectedButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,10 +323,12 @@
 				38F715751DD0A27D00279DB6 /* BusTableViewCell.m in Sources */,
 				3850C7271DC8378E00B4CFE8 /* AppDelegate.m in Sources */,
 				38F7156F1DD0A27D00279DB6 /* ViewController.m in Sources */,
+				3847A2361DFA9E8F00BDC0E5 /* BSCSelectedButton.m in Sources */,
 				3817435F1DF5ACBD00649D6D /* BSCRouteViewController.m in Sources */,
 				381743591DF5952D00649D6D /* BSCSearchViewController.m in Sources */,
 				38F715721DD0A27D00279DB6 /* BusRouteModel.m in Sources */,
 				3850C7241DC8378E00B4CFE8 /* main.m in Sources */,
+				3847A2391DFAC45B00BDC0E5 /* BSCStationListTableViewController.m in Sources */,
 				38F715711DD0A27D00279DB6 /* BusModel.m in Sources */,
 				38F715731DD0A27D00279DB6 /* BusRouteSegmentModel.m in Sources */,
 				38F715701DD0A27D00279DB6 /* BusArrModel.m in Sources */,
@@ -431,7 +443,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sanking.BusCommings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4cb79a43-8fce-4fb0-96a1-d9b4004ee8b8";
+				PROVISIONING_PROFILE = "361be9a4-ce2b-4d51-9fb1-d533bc932953";
 				PROVISIONING_PROFILE_SPECIFIER = shuangwang;
 			};
 			name = Debug;
@@ -451,7 +463,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sanking.BusCommings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4cb79a43-8fce-4fb0-96a1-d9b4004ee8b8";
+				PROVISIONING_PROFILE = "361be9a4-ce2b-4d51-9fb1-d533bc932953";
 				PROVISIONING_PROFILE_SPECIFIER = shuangwang;
 			};
 			name = Release;
