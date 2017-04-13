@@ -10,7 +10,7 @@
 
 @class BusStationModel;
 
-typedef void(^returnStationBlock)(BusStationModel *model, int32_t index);
+typedef void(^returnStationBlock)(BusStationModel *model, NSNumber *index);
 
 @interface BSCStationListTableViewController : UITableViewController
 

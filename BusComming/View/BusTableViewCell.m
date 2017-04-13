@@ -93,22 +93,14 @@
             self.label1.text = [NSString stringWithFormat:@"已进站: %@", stationModel.StationName];
         }
         
-        [self stationTipsWithNumber:self.busStationIndex];
-        
-//        if (self.busType == EBusType785Go) {
-//            [self stationTipsWithNumber:12];
-//        } else if (self.busType == EBusType311Go) {
-//            [self stationTipsWithNumber:8];
-//        } else if (self.busType == EBusType311Back) {
-//            [self stationTipsWithNumber:14];
-//        }
-        
+        [self stationTipsWithIndex:self.busStationIndex];
         self.label3.text = [NSString stringWithFormat:@"ExpNum: %d", self.busModel.ExpArriveBusStaNum];
     }
 }
 
-- (void)stationTipsWithNumber:(int32_t)number
+- (void)stationTipsWithIndex:(NSNumber *)index
 {
+    int32_t number = index.intValue;
     int32_t rStanum = self.busModel.RStanum;
     if (rStanum < number) {
         self.label2.text = [NSString stringWithFormat:@"还有%d站", number - rStanum];

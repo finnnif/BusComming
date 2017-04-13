@@ -74,7 +74,7 @@ static NSString *cellId = @"stationCellId";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BusStationModel *model = [self.stationArr objectAtIndex:indexPath.row];
-    self.returnStationBlock(model, (int32_t)indexPath.row);
+    self.returnStationBlock(model, @(indexPath.row));
     [self dismiss];
 }
 

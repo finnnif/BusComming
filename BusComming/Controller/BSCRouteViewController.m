@@ -35,7 +35,7 @@
 @property (nonatomic, strong) BusRouteSegmentModel *segmentModel;
 
 /** 站点的下标 */
-@property (nonatomic, assign) int32_t busStationIndex;
+@property (nonatomic, strong) NSNumber *busStationIndex;
 
 /** <#des#> */
 @property (nonatomic, strong) UIView *selectBusRouteView;
@@ -107,7 +107,9 @@ static NSString *cellId = @"busCellID";
         _selectOneButton.frame = CGRectMake(0, 0, SCREEN_WIDTH, 44);
         [_selectOneButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_selectOneButton addTarget:self action:@selector(selectBusRoute) forControlEvents:UIControlEventTouchUpInside];
-        
+//        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(15, 43.5, SCREEN_WIDTH, 0.5)];
+//        line.backgroundColor = [UIColor grayColor];
+//        [_selectOneButton addSubview:line];
     }
     return _selectOneButton;
 }
@@ -119,6 +121,9 @@ static NSString *cellId = @"busCellID";
         _selectTwoButton.frame = CGRectMake(0, 44, SCREEN_WIDTH, 44);
         [_selectTwoButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_selectTwoButton addTarget:self action:@selector(selectBusSegment) forControlEvents:UIControlEventTouchUpInside];
+//        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(15, 43.5, SCREEN_WIDTH, 0.5)];
+//        line.backgroundColor = [UIColor grayColor];
+//        [_selectTwoButton addSubview:line];
     }
     return _selectTwoButton;
 }
@@ -130,6 +135,9 @@ static NSString *cellId = @"busCellID";
         _selectThreeButton.frame = CGRectMake(0, 44*2, SCREEN_WIDTH, 44);
         [_selectThreeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_selectThreeButton addTarget:self action:@selector(selectBusStation) forControlEvents:UIControlEventTouchUpInside];
+        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 43.5, SCREEN_WIDTH, 0.5)];
+        line.backgroundColor = [UIColor grayColor];
+        [_selectThreeButton addSubview:line];
     }
     return _selectThreeButton;
 }
@@ -140,6 +148,7 @@ static NSString *cellId = @"busCellID";
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.selectBusRouteView.bottom, SCREEN_WIDTH, SCREEN_HEIGHT - self.selectBusRouteView.bottom - 49) style:UITableViewStylePlain];
         _tableView.dataSource = self;
         _tableView.delegate = self;
+        _tableView.tableFooterView = [UIView new];
     }
     return _tableView;
 }
@@ -161,7 +170,7 @@ static NSString *cellId = @"busCellID";
         
         self.stationModel = end;
         self.busStationArr = self.segmentModel.StationList;
-        self.busStationIndex = (int32_t)self.busStationArr.count;
+        self.busStationIndex = @(self.busStationArr.count);
         
         NSString *str = [NSString stringWithFormat:@"%@ - %@", start.StationName, end.StationName];
         
@@ -224,7 +233,7 @@ static NSString *cellId = @"busCellID";
     
     self.stationModel = end;
     self.busStationArr = self.segmentModel.StationList;
-    self.busStationIndex = (int32_t)self.busStationArr.count;
+    self.busStationIndex = @(self.busStationArr.count);
     
     NSString *str = [NSString stringWithFormat:@"%@ - %@", start.StationName, end.StationName];
     
@@ -238,7 +247,7 @@ static NSString *cellId = @"busCellID";
 {
     BSCStationListTableViewController *vc = [[BSCStationListTableViewController alloc] initWithStyle:UITableViewStylePlain stationArr:self.busStationArr];
     WS(weakSelf);
-    [vc returnStationModel:^(BusStationModel *model, int32_t index) {
+    [vc returnStationModel:^(BusStationModel *model, NSNumber *index) {
         [weakSelf.selectThreeButton setTitle:model.StationName forState:UIControlStateNormal];
         weakSelf.stationModel = model;
         weakSelf.busStationIndex = index;

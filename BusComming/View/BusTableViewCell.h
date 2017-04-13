@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, EBusType) {
 /** <#des#> */
 @property (nonatomic, strong) NSArray *stationList;
 /** <#des#> */
-@property (nonatomic, assign) int32_t busStationIndex;
+@property (nonatomic, copy) NSNumber *busStationIndex;
 /** <#des#> */
 @property (nonatomic, assign) EBusType busType;
 

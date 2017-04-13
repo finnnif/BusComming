@@ -44,6 +44,7 @@
 		3883F0E81DC8692F00A80C91 /* UIView+YOYOAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YOYOAddition.h"; sourceTree = "<group>"; };
 		3883F0E91DC8692F00A80C91 /* UIView+YOYOAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YOYOAddition.m"; sourceTree = "<group>"; };
 		3883F0EE1DC86A5A00A80C91 /* YOYOVisualMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOYOVisualMacro.h; sourceTree = "<group>"; };
+		38BD6C551E9F0F9600AE0041 /* BusComming.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BusComming.entitlements; sourceTree = "<group>"; };
 		38F7155F1DD0A27D00279DB6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		38F715601DD0A27D00279DB6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		38F715621DD0A27D00279DB6 /* BusArrModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusArrModel.h; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		3850C7211DC8378E00B4CFE8 /* BusComming */ = {
 			isa = PBXGroup;
 			children = (
+				38BD6C551E9F0F9600AE0041 /* BusComming.entitlements */,
 				3850C7251DC8378E00B4CFE8 /* AppDelegate.h */,
 				3850C7261DC8378E00B4CFE8 /* AppDelegate.m */,
 				38F7155E1DD0A27D00279DB6 /* Controller */,
@@ -231,8 +233,13 @@
 				TargetAttributes = {
 					3850C71E1DC8378E00B4CFE8 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = P94XD4JS4E;
+						DevelopmentTeam = 7658J45B7D;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -434,17 +441,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = P94XD4JS4E;
+				CODE_SIGN_ENTITLEMENTS = BusComming/BusComming.entitlements;
+				DEVELOPMENT_TEAM = 7658J45B7D;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BusComming/PrefixHeader.pch;
 				INFOPLIST_FILE = BusComming/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sanking.BusCommings;
+				PRODUCT_BUNDLE_IDENTIFIER = com.buscomming;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "361be9a4-ce2b-4d51-9fb1-d533bc932953";
-				PROVISIONING_PROFILE_SPECIFIER = shuangwang;
+				PROVISIONING_PROFILE = "eb141f82-5834-4fb6-8aaa-4a9f2415929a";
+				PROVISIONING_PROFILE_SPECIFIER = Buscomming_dev;
 			};
 			name = Debug;
 		};
@@ -454,17 +462,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = P94XD4JS4E;
+				CODE_SIGN_ENTITLEMENTS = BusComming/BusComming.entitlements;
+				DEVELOPMENT_TEAM = 7658J45B7D;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BusComming/PrefixHeader.pch;
 				INFOPLIST_FILE = BusComming/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sanking.BusCommings;
+				PRODUCT_BUNDLE_IDENTIFIER = com.buscomming;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "361be9a4-ce2b-4d51-9fb1-d533bc932953";
-				PROVISIONING_PROFILE_SPECIFIER = shuangwang;
+				PROVISIONING_PROFILE = "eb141f82-5834-4fb6-8aaa-4a9f2415929a";
+				PROVISIONING_PROFILE_SPECIFIER = Buscomming_dev;
 			};
 			name = Release;
 		};
