@@ -15,7 +15,7 @@
 #import "BusStationModel.h"
 
 #import "BusTableViewCell.h"
-
+#import "BSCNotification.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -48,6 +48,8 @@ static NSString *cellId = @"busCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [BSCNotification createLocalizedUserNotification];
     
     self.docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     self.title = @"🚌";
