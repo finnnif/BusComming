@@ -7,6 +7,7 @@ target 'BusComming' do
   pod 'Masonry', '~> 0.6.3'
   pod 'MagicalRecord'
   pod 'YYModel'
+  pod 'CYLTabBarController'
   pod 'SVProgressHUD'
   pod 'ReactiveCocoa', '~> 2.0.0'
   

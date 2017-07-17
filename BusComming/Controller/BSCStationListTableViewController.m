@@ -38,8 +38,7 @@ static NSString *cellId = @"stationCellId";
      self.navigationItem.rightBarButtonItem = item;
 }
 
-- (void)dismiss
-{
+- (void)dismiss {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -67,6 +66,7 @@ static NSString *cellId = @"stationCellId";
     
     BusStationModel *model = [self.stationArr objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    cell.textLabel.font = [UIFont fontWithName:@"cwTeXFangSong" size:16];
     cell.textLabel.text = model.StationName;
     return cell;
 }

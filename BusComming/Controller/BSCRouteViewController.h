@@ -12,7 +12,7 @@
 
 @interface BSCRouteViewController : UIViewController
 
-/** <#des#> */
+/** bus路线模型 */
 @property (nonatomic, strong) BusRouteModel *routeModel;
 
 @end

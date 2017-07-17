@@ -7,8 +7,8 @@
 //
 
 #import "BSCRouteViewController.h"
-#import "BSCSearchViewController.h"
 #import "BSCStationListTableViewController.h"
+#import "BSCSearchRouteTableViewController.h"
 
 #import "BusRouteModel.h"
 #import "BusRouteSegmentModel.h"
@@ -160,6 +160,9 @@ static NSString *cellId = @"busCellID";
     
     [self.manager GET:@"http://61.164.37.75:55555/BusService/Require_RouteStatData/" parameters:dict success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         
+        if (![responseObject isKindOfClass:[NSArray class]] || ![(NSArray *)responseObject count]) {
+            return ;
+        }
         self.busRouteSegmentArr = [NSArray yy_modelArrayWithClass:[BusRouteSegmentModel class] json:responseObject[0][@"SegmentList"]];
         self.isDefaultSegment = YES;
         
@@ -202,15 +205,15 @@ static NSString *cellId = @"busCellID";
 #pragma mark - selector
 - (void)selectBusRoute
 {
-    BSCSearchViewController *vc = [[BSCSearchViewController alloc] init];
+    BSCSearchRouteTableViewController *vc = [[BSCSearchRouteTableViewController alloc] init];
     WS(weakSelf);
-    
     [vc returnModel:^(BusRouteModel *model) {
-        weakSelf.routeModel = model;
-        [weakSelf.selectOneButton setTitle:model.RouteName forState:UIControlStateNormal];
-        [weakSelf requestDataWithRouteID:weakSelf.routeModel.RouteID];
+        ST(weakSelf,strongSelf);
+        strongSelf.routeModel = model;
+        [strongSelf.selectOneButton setTitle:model.RouteName forState:UIControlStateNormal];
+        [strongSelf requestDataWithRouteID:strongSelf.routeModel.RouteID];
+        [strongSelf dismissViewControllerAnimated:YES completion:nil];
     }];
-    
     vc.title = @"选择线路";
     UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nv animated:YES completion:^{
